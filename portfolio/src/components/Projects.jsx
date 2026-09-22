@@ -40,7 +40,7 @@ const PROJECTS = [
     color: 'var(--lime)',
     kind: 'IoT / Full-Stack',
     github: 'https://github.com/Brianlov/Water-Quality-System-FrontEnd',
-    live: null,
+    live: 'https://water-quality-system-front-end.vercel.app',
   },
   {
     title: 'React Movie App',
