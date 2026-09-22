@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pose Cycle Preview</title>
+<style>
+  :root {
+    --bg: #0d0d10;
+    --card: #17171b;
+    --accent: #e8b13f;
+    --text: #f2f0ea;
+    --muted: #8a8892;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+  }
+  h1 {
+    font-size: 15px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 28px 0;
+    font-weight: 600;
+  }
+  .stage {
+    position: relative;
+    width: 300px;
+    height: 440px;
+    background: radial-gradient(circle at 50% 30%, #1c1c22, #0d0d10 75%);
+    border-radius: 24px;
+    border: 1px solid #2a2a30;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .stage img {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 78%;
+    max-height: 86%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    opacity: 0;
+    animation: cycle 10s infinite;
+    filter: drop-shadow(0 10px 14px rgba(0,0,0,0.55));
+  }
+  .stage img:nth-child(2) { animation-delay: 0s; }
+  .stage img:nth-child(3) { animation-delay: 2s; }
+  .stage img:nth-child(4) { animation-delay: 4s; }
+  .stage img:nth-child(5) { animation-delay: 6s; }
+  .stage img:nth-child(6) { animation-delay: 8s; }
+
+  @keyframes cycle {
+    0%   { opacity: 0; transform: translateX(-50%) translateY(6px) scale(0.985); }
+    6%   { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+    18%  { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+    24%  { opacity: 0; transform: translateX(-50%) translateY(-6px) scale(0.985); }
+    100% { opacity: 0; }
+  }
+
+  .ground {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 62%;
+    height: 14px;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 72%);
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  .label {
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+  .dots {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #35343c;
+    animation: dotcycle 10s infinite;
+  }
+  .dot:nth-child(1) { animation-delay: 0s; }
+  .dot:nth-child(2) { animation-delay: 2s; }
+  .dot:nth-child(3) { animation-delay: 4s; }
+  .dot:nth-child(4) { animation-delay: 6s; }
+  .dot:nth-child(5) { animation-delay: 8s; }
+  @keyframes dotcycle {
+    0%, 100% { background: #35343c; }
+    5%, 23%  { background: var(--accent); }
+    24%      { background: #35343c; }
+  }
+  .note {
+    max-width: 340px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12.5px;
+    line-height: 1.6;
+    margin-top: 26px;
+  }
+  .note b { color: var(--text); }
+</style>
+</head>
+<body>
+  <h1>Pose Cycle Preview &middot; Transparent</h1>
+  <div class="stage">
+    <div class="ground"></div>
+    <img src="Brianconfident.png"  alt="Brian confident" />
+    <img src="Brianpresenting.png" alt="Brian presenting" />
+    <img src="Brianshh.png"        alt="Brian shh" />
+    <img src="Brianthinking.png"   alt="Brian thinking" />
+    <img src="Brianwave.png"       alt="Brian wave" />
+  </div>
+
+  <p class="label">cycling through 5 poses</p>
+  <div class="dots">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+
+  <p class="note">
+    Each pose fades in for ~2 s, holds for ~1.2 s, then fades out.<br>
+    Full loop: <b>10 s</b> &nbsp;|&nbsp; Images served from <b>/public</b>
+  </p>
+</body>
+</html>
