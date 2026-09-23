@@ -143,7 +143,7 @@ export default function Hero() {
             <a href="https://github.com/Brianlov" aria-label="GitHub" target="_blank" rel="noreferrer">
               <Github size={20} />
             </a>
-            <a href="https://www.linkedin.com/in/ooi-brian-0543a133a" aria-label="LinkedIn" target="_blank" rel="noreferrer">
+            <a href="https://www.linkedin.com/in/brian-ooi-0543a133a" aria-label="LinkedIn" target="_blank" rel="noreferrer">
               <Linkedin size={20} />
             </a>
           </div>

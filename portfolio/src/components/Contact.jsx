@@ -66,7 +66,7 @@ export default function Contact() {
           <a href="https://github.com/Brianlov" target="_blank" rel="noreferrer" className="btn btn-ghost">
             <Github size={18} /> GitHub
           </a>
-          <a href="https://www.linkedin.com/in/ooi-brian-0543a133a" target="_blank" rel="noreferrer" className="btn btn-ghost">
+          <a href="https://www.linkedin.com/in/brian-ooi-0543a133a" target="_blank" rel="noreferrer" className="btn btn-ghost">
             <Linkedin size={18} /> LinkedIn
           </a>
         </motion.div>
